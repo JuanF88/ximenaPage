@@ -7,11 +7,11 @@ import ModeloAtencion from "../components/ModeloAtencion";
 
 export default function Hero() {
   return (
-<section className="relative overflow-hidden text-center py-40 px-6">
+    <section className="relative overflow-hidden text-center py-40 px-4">
 
       {/* 🏷️ Título principal */}
       <motion.h1
-        className="text-6xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-500 text-transparent bg-clip-text max-w-4xl mx-auto leading-tight"
+        className="text-4xl sm:text-6xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-500 text-transparent bg-clip-text max-w-4xl mx-auto leading-tight"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* 🎓 Subtítulo */}
       <motion.h2
-        className="text-3xl sm:text-4xl font-semibold text-gray-700 mt-4"
+        className="text-2xl sm:text-4xl font-semibold text-gray-700 mt-4 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
@@ -31,7 +31,7 @@ export default function Hero() {
 
       {/* 📸 Imagen + texto */}
       <motion.div
-        className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left"
+        className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function Hero() {
           />
         </div>
         <div className="md:w-1/2 space-y-4">
-          <p className="text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-center md:text-left max-w-2xl mx-auto">
             Una experiencia práctica que va desde la examinación hasta la
             obtención de los resultados. Exploramos el cuerpo humano desde la
             fisioterapia con un enfoque integral y participativo.
@@ -68,7 +68,7 @@ export default function Hero() {
 
       {/* 💡 Beneficios académicos */}
       <motion.div
-        className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
@@ -105,17 +105,17 @@ export default function Hero() {
 
       {/* 🌟 Testimonios */}
       <motion.div
-        className="mt-24  w-full py-16 px-6"
+        className="mt-24 w-full py-16 px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-12">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12">
           Lo que dicen nuestros usuarios
         </h2>
-        <div className="flex gap-6 overflow-x-auto max-w-6xl mx-auto pb-4 px-4 transform-gpu will-change-transform">
-        {[
+        <div className="flex gap-6 overflow-x-auto max-w-6xl mx-auto pb-4 transform-gpu will-change-transform px-4">
+          {[
             {
               text: "La práctica me permitió entender de forma real lo que aprendo en clase.",
               name: "María G.",
@@ -129,12 +129,11 @@ export default function Hero() {
               name: "Andrea R.",
             },
           ].map((testimonial, index) => (
-<motion.div
-  key={index}
-  className="bg-white p-6 rounded-xl shadow-md text-center min-w-[280px] overflow-hidden transition-transform transform-gpu"
-  whileHover={{ scale: 1.05 }}
->
-
+            <motion.div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-md text-center min-w-[280px] overflow-hidden transition-transform transform-gpu"
+              whileHover={{ scale: 1.05 }}
+            >
               <Star className="w-8 h-8 text-yellow-500 mx-auto" />
               <p className="text-gray-700 mt-4 italic">"{testimonial.text}"</p>
               <p className="text-gray-900 font-bold mt-2">- {testimonial.name}</p>
