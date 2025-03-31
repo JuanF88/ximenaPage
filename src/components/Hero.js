@@ -47,12 +47,19 @@ export default function Hero() {
           />
         </div>
         <div className="md:w-1/2 space-y-4">
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-center md:text-left max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
             Una experiencia práctica que va desde la examinación hasta la
             obtención de los resultados. Exploramos el cuerpo humano desde la
             fisioterapia con un enfoque integral y participativo.
           </p>
+
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
+            Que va desde la examinación hasta el diagnóstico fisioterapéutico,
+            con el fin de establecer el plan de tratamiento de manera individualizada,
+            con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
+          </p>
         </div>
+
       </motion.div>
 
       {/* 📘 Modelo de Atención */}
@@ -78,7 +85,7 @@ export default function Hero() {
           {
             icon: BookOpenCheck,
             title: "Aprendizaje Activo",
-            desc: "Aplicación real de conocimientos clínicos.",
+            desc: "Estudio de métodos y procedimientos",
           },
           {
             icon: Activity,

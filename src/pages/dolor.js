@@ -26,16 +26,22 @@ export default function DolorPage() {
           >
             Dolor Musculoesquelético
           </motion.h1>
-          <motion.p
-            className="text-base sm:text-lg text-gray-700 px-2"
+          <motion.blockquote
+            className="relative bg-pink-50 border-l-4 border-pink-400 text-base sm:text-lg text-gray-700 px-6 py-4 rounded-md text-justify shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            El dolor es una experiencia sensorial y emocional desagradable
-            asociada a una lesión tisular real o potencial o que parece estar
-            asociada con esta.
-          </motion.p>
+            <p className="mb-2">
+              “El dolor es una experiencia sensorial y emocional desagradable
+              asociada a una lesión tisular real o potencial o que parece estar
+              asociada con esta.”
+            </p>
+            <cite className="block text-sm text-gray-500 text-right">
+              — Organización Mundial de la Salud (OMS)
+            </cite>
+          </motion.blockquote>
+
         </motion.section>
 
         {/* 1.1️⃣ Recuadros de información */}

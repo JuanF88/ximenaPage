@@ -56,7 +56,7 @@ export default function Header() {
                 isScrolled ? "text-2xl" : "text-3xl"
               } ${pacifico.className} hover:scale-90`}
             >
-              Mi Marca
+              Practice
             </span>
           </Link>
         </div>
