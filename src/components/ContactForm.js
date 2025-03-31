@@ -55,9 +55,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-2 flex-grow mt-0">
+    <section className="w-full overflow-hidden px-4 py-8 flex justify-center">
       <form
-        className="w-full max-w-lg md:max-w-xl lg:max-w-2xl bg-pink-100 p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg"
+        className="w-full max-w-screen-md bg-pink-100 p-6 sm:p-8 lg:p-10 rounded-lg shadow-lg"
         data-aos="fade-up"
         data-aos-duration="2000"
         onSubmit={handleSubmit}
@@ -69,7 +69,7 @@ export default function ContactForm() {
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            className="w-full px-4 py-2 sm:py-3 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
+            className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
             placeholder="Tu nombre"
             required
           />
@@ -82,7 +82,7 @@ export default function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 sm:py-3 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
+            className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
             placeholder="tucorreo@example.com"
             required
           />
@@ -94,7 +94,7 @@ export default function ContactForm() {
             name="tipo"
             value={formData.tipo}
             onChange={handleChange}
-            className="w-full px-4 py-2 sm:py-3 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
+            className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
             required
           >
             <option value="Comentario">Comentario</option>
@@ -110,7 +110,7 @@ export default function ContactForm() {
             name="mensaje"
             value={formData.mensaje}
             onChange={handleChange}
-            className="w-full px-4 py-2 sm:py-3 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
+            className="w-full px-4 py-2 rounded-md bg-white border border-gray-300 focus:border-pink-500 focus:outline-none"
             rows="4"
             placeholder="Escribe tu mensaje aquí..."
             required
@@ -119,7 +119,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 sm:py-3 text-lg sm:text-base rounded-md shadow-md transition-transform transform hover:scale-105"
+          className="w-full bg-pink-600 hover:bg-pink-500 text-white font-bold py-3 text-lg rounded-md shadow-md transition-transform transform hover:scale-105"
         >
           Enviar Mensaje
         </button>

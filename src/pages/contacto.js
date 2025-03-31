@@ -12,8 +12,8 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen text-gray-900">
-      <Header />
+    <div className="flex flex-col min-h-screen text-gray-900 overflow-hidden">
+<Header />
 
       {/* Contenedor principal centrado */}
       <main className="flex flex-col items-center text-center px-6 py-14 flex-grow mt-24">
