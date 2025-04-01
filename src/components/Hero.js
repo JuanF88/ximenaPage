@@ -4,6 +4,18 @@ import { BookOpenCheck, Activity, Users, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ModeloAtencion from "../components/ModeloAtencion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+const sliderSettings = {
+  dots: true, // Muestra los puntos de navegación
+  infinite: true, // Permite el desplazamiento infinito
+  speed: 500, // Velocidad de transición
+  slidesToShow: 1, // Muestra 1 imagen a la vez
+  slidesToScroll: 1, // Desplaza 1 imagen a la vez
+};
+
 
 export default function Hero() {
   return (
@@ -29,45 +41,73 @@ export default function Hero() {
         Séptimo semestre - Unicauca
       </motion.h2>
 
-      
-      {/* 📸 Imagen + texto */}
       <motion.div
-        className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-      >
-        <div className="md:w-1/2 relative">
-          <Image
-            src="/imagenes/Portada1.jpg"
-            alt="Ilustración de la práctica"
-            width={800}
-            height={800}
-            className="rounded-3xl shadow-xl w-full ml-[-180px]"
-          />
-          <Image
-            src="/imagenes/Portada2.jpg"
-            alt="Segunda imagen interactiva"
-            width={400}
-            height={300}
-            className="absolute bottom-0 right-6 rounded-2xl shadow-lg transform translate-x-14 translate-y-20 scale-95"
-          />
-        </div>
-        <div className="md:w-1/2 space-y-4">
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
-            Una experiencia práctica que va desde la examinación hasta la
-            obtención de los resultados. Exploramos el cuerpo humano desde la
-            fisioterapia con un enfoque integral y participativo.
-          </p>
+  className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+>
+  {/* Carrusel solo en móviles */}
+  <div className="w-full md:hidden">
+    <Slider {...sliderSettings}>
+      <div>
+        <Image
+          src="/imagenes/Portada1.jpg"
+          alt="Ilustración de la práctica"
+          width={800}
+          height={800}
+          className="rounded-3xl shadow-xl w-full"
+        />
+      </div>
+      <div>
+        <Image
+          src="/imagenes/Portada2.jpg"
+          alt="Segunda imagen interactiva"
+          width={400}
+          height={300}
+          className="rounded-2xl shadow-lg w-full"
+        />
+      </div>
+    </Slider>
+  </div>
 
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
-            Que va desde la examinación hasta el diagnóstico fisioterapéutico,
-            con el fin de establecer el plan de tratamiento de manera individualizada,
-            con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
-          </p>
-        </div>
-      </motion.div>
+  {/* Imágenes fijas solo en pantallas medianas y grandes */}
+  <div className="relative w-full md:w-1/2 md:block hidden">
+    <Image
+      src="/imagenes/Portada1.jpg"
+      alt="Ilustración de la práctica"
+      width={800}
+      height={800}
+      className="rounded-3xl shadow-xl w-full md:ml-[-180px] mx-auto"
+    />
+    <Image
+      src="/imagenes/Portada2.jpg"
+      alt="Segunda imagen interactiva"
+      width={400}
+      height={300}
+      className="absolute bottom-0 right-6 rounded-2xl shadow-lg transform translate-x-14 translate-y-20 scale-95"
+    />
+  </div>
+
+  {/* Texto */}
+  <div className="w-full md:w-1/2 space-y-4">
+    <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
+      Una experiencia práctica que va desde la examinación hasta la
+      obtención de los resultados. Exploramos el cuerpo humano desde la
+      fisioterapia con un enfoque integral y participativo.
+    </p>
+
+    <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
+      Que va desde la examinación hasta el diagnóstico fisioterapéutico,
+      con el fin de establecer el plan de tratamiento de manera individualizada,
+      con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
+    </p>
+  </div>
+</motion.div>
+
+
+
 
       {/* 📘 Modelo de Atención */}
       <motion.div
