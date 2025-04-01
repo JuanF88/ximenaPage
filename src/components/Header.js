@@ -51,7 +51,7 @@ export default function Header() {
       className={`text-2xl sm:text-2xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-500 text-transparent bg-clip-text max-w-4xl mx-auto leading-tight 
         hover:text-purple-500 transition-colors duration-300`}
     >
-      Fisiotips
+      FisioTips
     </span>
   </Link>
 </div>
