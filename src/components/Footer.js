@@ -52,13 +52,13 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Síguenos</h3>
             <div className="flex justify-center space-x-6">
-              <Link href="#" className="hover:text-pink-400">
+              <Link href="/" className="hover:text-pink-400">
                 <Facebook className="w-6 h-6" />
               </Link>
-              <Link href="#" className="hover:text-pink-400">
+              <Link href="/" className="hover:text-pink-400">
                 <Twitter className="w-6 h-6" />
               </Link>
-              <Link href="#" className="hover:text-pink-400">
+              <Link href="/" className="hover:text-pink-400">
                 <Instagram className="w-6 h-6" />
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <p className="text-gray-400 text-sm mt-8">
-          © 2025 Mi Empresa. Todos los derechos reservados.
+          © 2025 Fisiotips. Todos los derechos reservados.
         </p>
       </div>
     </motion.footer>
