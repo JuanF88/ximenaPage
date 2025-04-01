@@ -29,6 +29,7 @@ export default function Hero() {
         Séptimo semestre - Unicauca
       </motion.h2>
 
+      
       {/* 📸 Imagen + texto */}
       <motion.div
         className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
@@ -37,13 +38,20 @@ export default function Hero() {
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 relative">
           <Image
             src="/imagenes/Portada1.jpg"
             alt="Ilustración de la práctica"
-            width={600}
-            height={400}
-            className="rounded-3xl shadow-xl w-full"
+            width={800}
+            height={800}
+            className="rounded-3xl shadow-xl w-full ml-[-180px]"
+          />
+          <Image
+            src="/imagenes/Portada2.jpg"
+            alt="Segunda imagen interactiva"
+            width={400}
+            height={300}
+            className="absolute bottom-0 right-6 rounded-2xl shadow-lg transform translate-x-14 translate-y-20 scale-95"
           />
         </div>
         <div className="md:w-1/2 space-y-4">
@@ -59,7 +67,6 @@ export default function Hero() {
             con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
           </p>
         </div>
-
       </motion.div>
 
       {/* 📘 Modelo de Atención */}
