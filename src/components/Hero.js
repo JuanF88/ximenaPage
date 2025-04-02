@@ -132,7 +132,7 @@ export default function Hero() {
           {
             icon: BookOpenCheck,
             title: "Aprendizaje Activo",
-            desc: "Estudio de métodos y procedimientos",
+            desc: "Espacio para aprender y entender el funcionamiento de nuestro cuerpo",
           },
           {
             icon: Activity,

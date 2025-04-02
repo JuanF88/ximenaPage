@@ -44,17 +44,22 @@ export default function Header() {
 
         </div>
 
-{/* Brand name */}
-<div className="absolute left-1/2 transform -translate-x-1/2">
+{/* Brand name y subtítulo */}
+<div className="absolute left-1/2 transform -translate-x-1/2 text-center">
   <Link href="/" passHref>
     <span
       className={`text-2xl sm:text-2xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-500 text-transparent bg-clip-text max-w-4xl mx-auto leading-tight 
-        hover:text-purple-500 transition-colors duration-300`}
+        hover:text-purple-500 transition-colors duration-300 block`}
     >
       FisioTips
     </span>
   </Link>
+  <p className="text-xs sm:text-sm text-gray-500 mt-0.5 tracking-wide">
+    Conócete, autoevalúate y muévete
+  </p>
 </div>
+
+
 
 
         {/* Botón Hamburguesa (Mobile) */}
