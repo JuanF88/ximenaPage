@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Hero from "@/components/Hero";
 import ModeloAtencion from "../components/ModeloAtencion";
+import { Analytics } from "@vercel/analytics/react"
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -48,6 +49,7 @@ export default function Home() {
 
       {/* 📌 Contenido principal */}
       <Header />
+      <Analytics/>
       <Hero />
       <Footer />
     </div>
