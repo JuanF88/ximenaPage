@@ -94,11 +94,7 @@ export default function Hero() {
   <div className="w-full md:w-1/2 space-y-4">
     <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
       Una experiencia práctica que va desde la examinación hasta la
-      obtención de los resultados para emitir un diagnostico fisioterapéutico.
-    </p>
-
-    <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
-      con el fin de establecer el plan de tratamiento de manera individualizada,
+      obtención de los resultados para emitir un diagnostico fisioterapéutico, con el fin de establecer el plan de tratamiento de manera individualizada,
       con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
     </p>
   </div>

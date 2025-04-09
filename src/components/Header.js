@@ -75,8 +75,8 @@ export default function Header() {
             } flex-col absolute top-full right-4 bg-white shadow-lg rounded-md mt-2 py-2 px-4 space-y-3 md:space-y-0 md:flex md:flex-row md:static md:shadow-none md:bg-transparent md:space-x-6 md:items-center text-gray-700 font-medium transition-all duration-300`}
         >
           <Link href="/dolor" className="hover:text-pink-500 transition">¿Qué es el dolor?</Link>
-          {/* <Link href="/" className="hover:text-pink-500 transition">Blog de experiencias</Link>
-          <Link href="/sobre-nosotros" className="hover:text-pink-500 transition">Nosotros</Link> */}
+          <Link href="/experiencias" className="hover:text-pink-500 transition">Blog de experiencias</Link>
+          {/* <Link href="/sobre-nosotros" className="hover:text-pink-500 transition">Nosotros</Link> */}
           <Link href="/contacto" className="hover:text-pink-500 transition">Contacto</Link>
         </nav>
       </div>
