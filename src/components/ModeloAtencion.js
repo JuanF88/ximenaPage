@@ -11,7 +11,7 @@ const fases = [
 ];
 
 const descripciones = [
-  "Obtener la historia realizando una revisión de sistemas y seleccionando y administrando test y medidas para recoger datos sobre el paciente.",
+  "Obtener la historia clínica realizando una revisión de cada uno de los sistemas,s eleccionando y administrando test y medidas para recoger datos sobre el paciente.",
   "Juicio clínico basado en los datos recogidos durante la examinación.",
   "Integrar y evaluar datos de la examinación para describir la condición del paciente.",
   "Propósito e interacción del fisioterapeuta con la paciente y la apropiación con otros individuos involucrados con el cuidado del paciente.",
