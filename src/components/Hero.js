@@ -41,6 +41,17 @@ export default function Hero() {
         Séptimo semestre - Unicauca
       </motion.h2>
 
+      
+      {/* 🎓 Subtítulo */}
+      <motion.h2
+        className="text-2xl sm:text-4xl font-semibold text-gray-700 mt-4 max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+      >
+        Centro Universitario en Salud “Alfonso López”
+      </motion.h2>
+
       <motion.div
   className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
   initial={{ opacity: 0, y: 20 }}
