@@ -9,13 +9,15 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const sliderSettings = {
-  dots: true, // Muestra los puntos de navegación
-  infinite: true, // Permite el desplazamiento infinito
-  speed: 500, // Velocidad de transición
-  slidesToShow: 1, // Muestra 1 imagen a la vez
-  slidesToScroll: 1, // Desplaza 1 imagen a la vez
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: false,
 };
-
 
 export default function Hero() {
   return (
@@ -41,78 +43,85 @@ export default function Hero() {
         Séptimo semestre - Unicauca
       </motion.h2>
 
-      
-      {/* 🎓 Subtítulo */}
-      <motion.h2
-        className="text-2xl sm:text-4xl font-semibold text-gray-700 mt-4 max-w-2xl mx-auto"
+      {/* 🎓 Subtítulo más pequeño */}
+      <motion.h3
+        className="text-lg sm:text-2xl font-medium text-gray-600 mt-2 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
       >
         Centro Universitario en Salud “Alfonso López”
-      </motion.h2>
+      </motion.h3>
 
-      <motion.div
-  className="mt-12 flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto text-left px-4"
+<motion.div
+  className="mt-12 w-full max-w-5xl mx-auto px-4"
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
-  transition={{ delay: 0.3, duration: 0.8 }}
+  transition={{ delay: 0.2, duration: 0.8 }}
 >
-  {/* Carrusel solo en móviles */}
-  <div className="w-full md:hidden">
-    <Slider {...sliderSettings}>
-      <div>
-        <Image
-          src="/imagenes/Portada1.jpg"
-          alt="Ilustración de la práctica"
-          width={800}
-          height={800}
-          className="rounded-3xl shadow-xl w-full"
-        />
-      </div>
-      <div>
-        <Image
-          src="/imagenes/Portada2.jpg"
-          alt="Segunda imagen interactiva"
-          width={400}
-          height={300}
-          className="rounded-2xl shadow-lg w-full"
-        />
-      </div>
-    </Slider>
-  </div>
+  <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
+<iframe
+  className="w-full h-full"
+  src="https://www.youtube.com/embed/zNHRW2s0KZk?autoplay=1&mute=1&controls=1"
+  title="Video de Presentación"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
 
-  {/* Imágenes fijas solo en pantallas medianas y grandes */}
-  <div className="relative w-full md:w-1/2 md:block hidden">
-    <Image
-      src="/imagenes/Portada1.jpg"
-      alt="Ilustración de la práctica"
-      width={800}
-      height={800}
-      className="rounded-3xl shadow-xl w-full md:ml-[-180px] mx-auto"
-    />
-    <Image
-      src="/imagenes/Portada2.jpg"
-      alt="Segunda imagen interactiva"
-      width={400}
-      height={300}
-      className="absolute bottom-0 right-6 rounded-2xl shadow-lg transform translate-x-14 translate-y-20 scale-95"
-    />
-  </div>
-
-  {/* Texto */}
-  <div className="w-full md:w-1/2 space-y-4">
-    <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify max-w-2xl mx-auto">
-      Una experiencia práctica que va desde la examinación hasta la
-      obtención de los resultados para emitir un diagnóstico fisioterapéutico, con el fin de establecer el plan de tratamiento de manera individualizada,
-      con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
-    </p>
   </div>
 </motion.div>
 
 
+      {/* 🖼️ Carrusel de imágenes en todas las pantallas */}
+      <motion.div
+        className="mt-8 w-full max-w-2xl mx-auto"
 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+      >
+        <Slider {...sliderSettings}>
+          <div>
+            <Image
+              src="/imagenes/Portada1.jpg"
+              alt="Ilustración de la práctica"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-md w-full max-h-[320px] object-cover"
+            />
+
+          </div>
+          <div>
+            <Image
+              src="/imagenes/Portada2.jpg"
+              alt="Ilustración de la práctica"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-md w-full max-h-[320px] object-cover"
+            />
+
+          </div>
+        </Slider>
+      </motion.div>
+
+      {/* Texto descriptivo */}
+      <motion.div
+        className="mt-12 max-w-4xl mx-auto px-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+      >
+        <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify">
+          Una experiencia práctica que va desde la examinación hasta la
+          obtención de los resultados para emitir un diagnóstico fisioterapéutico,
+          con el fin de establecer el plan de tratamiento de manera individualizada,
+          con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
+        </p>
+      </motion.div>
 
       {/* 📘 Modelo de Atención */}
       <motion.div

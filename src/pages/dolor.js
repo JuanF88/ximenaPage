@@ -18,29 +18,58 @@ export default function DolorPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h1
-            className="text-3xl sm:text-5xl font-extrabold text-pink-600 mb-6"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Dolor Musculoesquelético
-          </motion.h1>
-          <motion.blockquote
-            className="relative bg-pink-50 border-l-4 border-pink-400 text-base sm:text-lg text-gray-700 px-6 py-4 rounded-md text-justify shadow-sm"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            <p className="mb-2">
-              “El dolor es una experiencia sensorial y emocional desagradable
-              asociada a una lesión tisular real o potencial o que parece estar
-              asociada con esta.”
-            </p>
-            <cite className="block text-sm text-gray-500 text-right">
-              — Organización Mundial de la Salud (OMS)
-            </cite>
-          </motion.blockquote>
+          {/* Definición de dolor general */}
+<motion.h1
+  className="text-3xl sm:text-5xl font-extrabold text-pink-600 mb-6"
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  Dolor
+</motion.h1>
+
+<motion.blockquote
+  className="relative bg-pink-50 border-l-4 border-pink-400 text-base sm:text-lg text-gray-700 px-6 py-4 rounded-md text-justify shadow-sm"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+>
+  <p className="mb-2">
+    “El dolor es una experiencia sensorial y emocional desagradable
+    asociada a una lesión tisular real o potencial o que parece estar
+    asociada con esta.”
+  </p>
+  <cite className="block text-sm text-gray-500 text-right">
+    — Organización Mundial de la Salud (OMS)
+  </cite>
+</motion.blockquote>
+
+{/* Dolor musculoesquelético - con separación extra */}
+<div className="mt-12">
+  <motion.h1
+    className="text-3xl sm:text-5xl font-extrabold text-pink-600 mb-6"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    Dolor musculoesquelético
+  </motion.h1>
+
+  <motion.blockquote
+    className="relative bg-pink-50 border-l-4 border-pink-400 text-base sm:text-lg text-gray-700 px-6 py-5 rounded-md text-justify shadow-sm"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.8 }}
+  >
+    <p className="mb-2">
+      El dolor musculoesquelético (DME) es un dolor que se produce en los huesos, músculos, articulaciones,
+      ligamentos y tendones. Puede ser causado por una lesión, una condición subyacente como la artritis, o
+      por el uso excesivo de los músculos. El DME puede ser agudo o crónico, y su intensidad puede variar
+      de leve a grave.
+    </p>
+  </motion.blockquote>
+</div>
+
 
         </motion.section>
 
