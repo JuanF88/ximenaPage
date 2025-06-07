@@ -53,25 +53,25 @@ export default function Hero() {
         Centro Universitario en Salud “Alfonso López”
       </motion.h3>
 
-<motion.div
-  className="mt-12 w-full max-w-5xl mx-auto px-4"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.2, duration: 0.8 }}
->
-  <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
-<iframe
-  className="w-full h-full"
-  src="https://www.youtube.com/embed/zNHRW2s0KZk?autoplay=1&mute=1&controls=1"
-  title="Video de Presentación"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+      <motion.div
+        className="mt-12 w-full max-w-5xl mx-auto px-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+      >
+        <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/zNHRW2s0KZk?autoplay=1&mute=1&controls=1"
+            title="Video de Presentación"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
 
-  </div>
-</motion.div>
+        </div>
+      </motion.div>
 
 
       {/* 🖼️ Carrusel de imágenes en todas las pantallas */}
@@ -90,7 +90,7 @@ export default function Hero() {
               alt="Ilustración de la práctica"
               width={800}
               height={600}
-              className="rounded-2xl shadow-md w-full max-h-[320px] object-cover"
+              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
             />
 
           </div>
@@ -100,9 +100,18 @@ export default function Hero() {
               alt="Ilustración de la práctica"
               width={800}
               height={600}
-              className="rounded-2xl shadow-md w-full max-h-[320px] object-cover"
+              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
             />
 
+          </div>
+          <div>
+            <Image
+              src="/imagenes/Portada3.jpg"
+              alt="Ilustración de la práctica"
+              width={800}
+              height={600}
+              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
+            />
           </div>
         </Slider>
       </motion.div>

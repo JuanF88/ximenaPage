@@ -11,7 +11,7 @@ const fases = [
 ];
 
 const descripciones = [
-  "Obtener la historia clínica realizando una revisión de cada uno de los sistemas,s eleccionando y administrando test y medidas para recoger datos sobre el paciente.",
+  "Obtener la historia clínica realizando una revisión de cada uno de los sistemas, seleccionando y administrando test y medidas para recoger datos sobre el paciente.",
   "Juicio clínico basado en los datos recogidos durante la examinación.",
   "Integrar y evaluar datos de la examinación para describir la condición del paciente.",
   "Propósito e interacción del fisioterapeuta con la paciente y la apropiación con otros individuos involucrados con el cuidado del paciente.",
@@ -80,14 +80,25 @@ export default function ModeloAtencion() {
         })}
 
         {/* Centro del modelo como botón/enlace */}
-        <a
-          href="https://www.apta.org/apta-resources-in-spanish/recursos-para-fisioterapeutas-de-apta-en-espanol" // ← Cambia esto por tu URL deseada
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-4 rounded-full shadow-md text-sm sm:text-base transition duration-300"
-        >
-          Modelo de Atención
-        </a>
+{/* Centro del modelo como botón/enlace */}
+{/* Centro del modelo como botón/enlace con tooltip */}
+<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group text-center">
+  <a
+    href="https://www.apta.org/apta-resources-in-spanish/recursos-para-fisioterapeutas-de-apta-en-espanol"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-4 rounded-full shadow-md text-sm sm:text-base transition duration-300"
+  >
+    Modelo de Atención
+  </a>
+
+  {/* Tooltip al pasar el mouse */}
+  <div className="absolute left-1/2 -translate-x-1/2 mt-6 w-64 bg-white border border-gray-300 text-gray-700 text-xs sm:text-sm px-6 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+    Este es el paso a paso que se realiza con el paciente cuando solicita el servicio de Fisioterapia.
+  </div>
+</div>
+
+        
       </div>
     </section>
   );

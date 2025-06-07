@@ -145,7 +145,7 @@ export default function DolorPage() {
           >
             <iframe
               className="w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/TU_VIDEO"
+              src="https://www.youtube.com/embed/BuoqeTCWPgI"
               title="Diagnóstico y Prevención del Dolor"
               allowFullScreen
             ></iframe>
