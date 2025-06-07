@@ -63,7 +63,7 @@ export default function Hero() {
         <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/zNHRW2s0KZk?autoplay=1&mute=1&controls=1"
+            src="https://www.youtube.com/embed/AhUw33WfvUk?autoplay=1&mute=1&controls=1"
             title="Video de Presentación"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
