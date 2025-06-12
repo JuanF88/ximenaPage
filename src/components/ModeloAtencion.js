@@ -19,17 +19,17 @@ const descripciones = [
   "Nueva evaluación para ajustar el tratamiento.",
 ];
 
-const customArrowAngles = [1, 0, 70, 120, 190, 250];
-
 export default function ModeloAtencion() {
   const ordenPosiciones = [4, 5, 0, 1, 2, 3];
   const containerRef = useRef(null);
   const [radius, setRadius] = useState(160);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const width = containerRef.current?.offsetWidth ?? 400;
-      setRadius(width * 0.4);
+      const width = window.innerWidth;
+      setIsMobile(width < 640); // sm breakpoint
+      setRadius(width < 640 ? 0 : (containerRef.current?.offsetWidth ?? 400) * 0.4);
     };
 
     handleResize();
@@ -38,18 +38,30 @@ export default function ModeloAtencion() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center py-32 px-4 overflow-hidden">
-      <h2 className="text-3xl sm:text-4xl font-bold text-pink-600 z-10 mb-10 text-center">
+    <section className="relative flex flex-col items-center justify-center py-20 px-4 sm:py-32 overflow-hidden">
+      <h2 className="text-2xl sm:text-4xl font-bold text-pink-600 mb-10 text-center">
         Modelo de Atención en Fisioterapia
       </h2>
 
       <div
         ref={containerRef}
-        className="relative w-full max-w-[500px] aspect-square"
+        className={`relative w-full max-w-[500px] ${isMobile ? "" : "aspect-square"}`}
       >
         {ordenPosiciones.map((faseIndex, index) => {
           const fase = fases[index];
           const descripcion = descripciones[index];
+
+          if (isMobile) {
+            return (
+              <div
+                key={`fase-mobile-${index}`}
+                className="mb-6 p-4 bg-white rounded-xl shadow border border-gray-200"
+              >
+                <div className="text-pink-500 font-bold text-lg">{index + 1}. {fase}</div>
+                <div className="text-sm text-gray-600 mt-1">{descripcion}</div>
+              </div>
+            );
+          }
 
           const angleDeg = (faseIndex / fases.length) * 360;
           const rad = (angleDeg * Math.PI) / 180;
@@ -57,48 +69,42 @@ export default function ModeloAtencion() {
           const y = radius * Math.sin(rad);
 
           return (
-            <React.Fragment key={`fase-${index}`}>
-              <div
-                className="absolute w-40 h-40 flex flex-col items-center justify-center text-center p-3 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition"
-                style={{
-                  left: `calc(45% + ${x}px - 56px)`,
-                  top: `calc(45% + ${y}px - 56px)`,
-                }}
-              >
-                <span className="text-pink-500 text-lg font-bold mb-1">
-                  {index + 1}
-                </span>
-                <span className="text-xs font-semibold text-pink-600 leading-snug">
-                  {fase}
-                </span>
-                <span className="text-[10px] text-gray-600 mt-1">
-                  {descripcion}
-                </span>
-              </div>
-            </React.Fragment>
+            <div
+              key={`fase-${index}`}
+              className="absolute w-40 h-40 flex flex-col items-center justify-center text-center p-3 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl transition"
+              style={{
+                left: `calc(50% + ${x}px - 80px)`,
+                top: `calc(50% + ${y}px - 80px)`,
+              }}
+            >
+              <span className="text-pink-500 text-lg font-bold mb-1">
+                {index + 1}
+              </span>
+              <span className="text-xs font-semibold text-pink-600 leading-snug">
+                {fase}
+              </span>
+              <span className="text-[10px] text-gray-600 mt-1">
+                {descripcion}
+              </span>
+            </div>
           );
         })}
 
-        {/* Centro del modelo como botón/enlace */}
-{/* Centro del modelo como botón/enlace */}
-{/* Centro del modelo como botón/enlace con tooltip */}
-<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group text-center">
-  <a
-    href="https://www.apta.org/apta-resources-in-spanish/recursos-para-fisioterapeutas-de-apta-en-espanol"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-4 rounded-full shadow-md text-sm sm:text-base transition duration-300"
-  >
-    Modelo de Atención
-  </a>
-
-  {/* Tooltip al pasar el mouse */}
-  <div className="absolute left-1/2 -translate-x-1/2 mt-6 w-64 bg-white border border-gray-300 text-gray-700 text-xs sm:text-sm px-6 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
-    Este es el paso a paso que se realiza con el paciente cuando solicita el servicio de Fisioterapia.
-  </div>
-</div>
-
-        
+        {!isMobile && (
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 group text-center">
+            <a
+              href="https://www.apta.org/apta-resources-in-spanish/recursos-para-fisioterapeutas-de-apta-en-espanol"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-6 py-4 rounded-full shadow-md text-sm sm:text-base transition duration-300"
+            >
+              Modelo de Atención
+            </a>
+            <div className="absolute left-1/2 -translate-x-1/2 mt-6 w-64 bg-white border border-gray-300 text-gray-700 text-xs sm:text-sm px-6 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50">
+              Este es el paso a paso que se realiza con el paciente cuando solicita el servicio de Fisioterapia.
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

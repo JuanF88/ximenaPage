@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+import aspectRatio from '@tailwindcss/aspect-ratio' // ✅ Importa el plugin
+
 export default {
-  darkMode: "class", // Usa la clase "dark" para activar el modo oscuro
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,5 +16,5 @@ export default {
       },
     },
   },
-  plugins: [],
-};
+  plugins: [aspectRatio], // ✅ Agrega el plugin aquí
+}

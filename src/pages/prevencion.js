@@ -15,10 +15,10 @@ function PrevArrow(props) {
   return (
     <button
       onClick={onClick}
-      className="absolute -left-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+      className="absolute left-2 sm:-left-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
       aria-label="Anterior"
     >
-      <ChevronLeft className="text-pink-600 w-6 h-6" />
+      <ChevronLeft className="text-pink-600 w-5 h-5 sm:w-6 sm:h-6" />
     </button>
   );
 }
@@ -28,13 +28,14 @@ function NextArrow(props) {
   return (
     <button
       onClick={onClick}
-      className="absolute -right-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+      className="absolute right-2 sm:-right-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
       aria-label="Siguiente"
     >
-      <ChevronRight className="text-pink-600 w-6 h-6" />
+      <ChevronRight className="text-pink-600 w-5 h-5 sm:w-6 sm:h-6" />
     </button>
   );
 }
+
 
 export default function Prevencion() {
   useEffect(() => {
@@ -59,8 +60,7 @@ export default function Prevencion() {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen overflow-hidden">
-      {/* 🎨 Fondo degradado */}
+<div className="relative flex flex-col min-h-screen overflow-auto">      {/* 🎨 Fondo degradado */}
       <div className="absolute inset-0 -z-30 w-full h-full bg-pink-100 sm:bg-gradient-to-br sm:from-pink-100 sm:via-white sm:to-purple-300 sm:animate-gradient opacity-80" />
 
       {/* 🫧 Blobs decorativos */}
@@ -73,26 +73,49 @@ export default function Prevencion() {
       <Header />
       <Analytics />
 
+
       <main className="flex-grow pt-40 px-4 sm:px-8 max-w-5xl mx-auto">
-        <section
-          className="bg-white rounded-3xl shadow-xl p-6 mb-12 transition duration-300 min-h-[200px]"
-          data-aos="fade-up"
-        >
+<section className="bg-white rounded-3xl shadow-xl p-6 mb-12 transition duration-300">
           <div className="w-full rounded-xl shadow-md relative">
-            <Slider {...videoSettings}>
-              {videos.map((src, index) => (
-                <div key={index}>
-                  <iframe
-                    className="w-full h-[400px] sm:h-[500px] rounded-xl"
-                    src={src}
-                    title={`Video ${index + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              ))}
-            </Slider>
+            
+            
+            {/* Carrusel solo en PC */}
+<div className="hidden sm:block">
+  <Slider {...videoSettings}>
+    {videos.map((src, index) => (
+      <div key={index} className="w-full px-4">
+        <div className="w-full aspect-[16/9] overflow-hidden rounded-xl">
+          <iframe
+            src={src}
+            title={`Video ${index + 1}`}
+            className="w-full h-full rounded-xl"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    ))}
+  </Slider>
+</div>
+<div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory px-2 sm:hidden">
+  {videos.map((src, index) => (
+    <div key={index} className="flex-shrink-0 w-full snap-center">
+      <div className="w-full aspect-[16/9] overflow-hidden rounded-xl">
+        <iframe
+          src={src}
+          title={`Video ${index + 1}`}
+          className="w-full h-full rounded-xl"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  ))}
+</div>
+
+
           </div>
         </section>
       </main>
