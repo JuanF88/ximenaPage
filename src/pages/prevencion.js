@@ -54,9 +54,13 @@ export default function Prevencion() {
   };
 
   const videos = [
+    "https://www.youtube.com/embed/zqrbXrsBz-0?controls=1",
+    "https://www.youtube.com/embed/KE6jFdH9jmI?controls=1",
     "https://www.youtube.com/embed/4SM9V9JqU18?controls=1",
     "https://www.youtube.com/embed/E-nB1yhTkZI?controls=1",
-    "https://www.youtube.com/embed/zqrbXrsBz-0?controls=1",
+    "https://www.youtube.com/embed/VxDK0qPjmuY?controls=1",
+    
+    
   ];
 
   return (
@@ -98,6 +102,7 @@ export default function Prevencion() {
     ))}
   </Slider>
 </div>
+
 <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory px-2 sm:hidden">
   {videos.map((src, index) => (
     <div key={index} className="flex-shrink-0 w-full snap-center">
