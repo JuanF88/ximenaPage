@@ -19,10 +19,37 @@ const sliderSettings = {
   arrows: false,
 };
 
+// 👇 Aquí defines tus imágenes + etiquetas
+const heroSlides = [
+  {
+    src: "/imagenes/Portada0.jpeg",
+    alt: "Ilustración de la práctica osteomuscular 0",
+    label: "Programa de Fisioterapia - 2026",
+    className: "object-cover object-[80%_20%]",
+  },
+  {
+    src: "/imagenes/Portada1.jpg",
+    alt: "Ilustración de la práctica osteomuscular 1",
+    label: "Programa de Fisioterapia - 2025-2",
+    className: "object-cover",
+  },
+  {
+    src: "/imagenes/Portada2.jpg",
+    alt: "Ilustración de la práctica osteomuscular 2",
+    label: "Programa de Fisioterapia - 2025-1",
+    className: "object-cover",
+  },
+  {
+    src: "/imagenes/Portada3.jpg",
+    alt: "Ilustración de la práctica osteomuscular 3",
+    label: "Programa de Fisioterapia - 2024-2",
+    className: "object-cover",
+  },
+];
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden text-center py-40 px-4">
-
       {/* 🏷️ Título principal */}
       <motion.h1
         className="text-4xl sm:text-6xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-500 text-transparent bg-clip-text max-w-4xl mx-auto leading-tight"
@@ -53,6 +80,7 @@ export default function Hero() {
         Centro Universitario en Salud “Alfonso López”
       </motion.h3>
 
+      {/* 🎬 Video principal */}
       <motion.div
         className="mt-12 w-full max-w-5xl mx-auto px-4"
         initial={{ opacity: 0, y: 20 }}
@@ -69,50 +97,35 @@ export default function Hero() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-
         </div>
       </motion.div>
 
-
-      {/* 🖼️ Carrusel de imágenes en todas las pantallas */}
+      {/* 🖼️ Carrusel de imágenes con etiqueta */}
       <motion.div
         className="mt-8 w-full max-w-2xl mx-auto"
-
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
         <Slider {...sliderSettings}>
-          <div>
-            <Image
-              src="/imagenes/Portada1.jpg"
-              alt="Ilustración de la práctica"
-              width={800}
-              height={600}
-              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
-            />
-
-          </div>
-          <div>
-            <Image
-              src="/imagenes/Portada2.jpg"
-              alt="Ilustración de la práctica"
-              width={800}
-              height={600}
-              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
-            />
-
-          </div>
-          <div>
-            <Image
-              src="/imagenes/Portada3.jpg"
-              alt="Ilustración de la práctica"
-              width={800}
-              height={600}
-              className="rounded-2xl shadow-md w-full max-h-[420px] object-cover"
-            />
-          </div>
+          {heroSlides.map((slide, index) => (
+            <div key={index} className="px-1">
+              <div className="flex flex-col items-center">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={800}
+                  height={600}
+                  className={`rounded-2xl shadow-md w-full max-h-[420px] ${slide.className}`}
+                />
+                {/* Etiqueta debajo de la imagen */}
+                <p className="mt-3 text-xs sm:text-sm text-gray-800 bg-white/90 px-4 py-2 rounded-full shadow-sm inline-block">
+                  {slide.label}
+                </p>
+              </div>
+            </div>
+          ))}
         </Slider>
       </motion.div>
 
@@ -125,16 +138,16 @@ export default function Hero() {
         transition={{ delay: 0.4, duration: 0.8 }}
       >
         <p className="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify">
-          Una experiencia práctica que va desde la examinación hasta la
-          obtención de los resultados para emitir un diagnóstico fisioterapéutico,
-          con el fin de establecer el plan de tratamiento de manera individualizada,
-          con un enfoque integral, dinámico y participativo, donde el paciente es el eje principal.
+          Una experiencia práctica que va desde la examinación hasta la obtención de los
+          resultados para emitir un diagnóstico fisioterapéutico, con el fin de establecer
+          el plan de tratamiento de manera individualizada, con un enfoque integral,
+          dinámico y participativo, donde el paciente es el eje principal.
         </p>
       </motion.div>
 
       {/* 📘 Modelo de Atención */}
       <motion.div
-        className="mt-16 w-full"
+        className="mt-32 w-full"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
@@ -145,7 +158,7 @@ export default function Hero() {
 
       {/* 💡 Beneficios académicos */}
       <motion.div
-        className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto px-4"
+        className="mt-60 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}

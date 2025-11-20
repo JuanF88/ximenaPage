@@ -13,9 +13,9 @@ export default function Dolor() {
     setSelectedZone(zona);
     setTimeout(() => {
       if (zona === "lumbalgia") {
-        router.push("/dolor/lumbalgia");
+        router.push("/lumbalgia");
       } else if (zona === "cervicalgia") {
-        router.push("/dolor/cervicalgia");
+        router.push("/cervicalgia");
       }
     }, 1000);
   };

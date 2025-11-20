@@ -81,18 +81,20 @@ export default function Header() {
               <div
                 className="absolute left-0 top-full mt-0 w-48 rounded-md bg-white shadow-md py-2 px-4 space-y-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200"
               >
+                 <Link
+                  href="/cervicalgia"
+                  className="block text-gray-700 hover:text-pink-500 transition"
+                >
+                  Cervicalgia
+                </Link>
+
                 <Link
                   href="/dolor/lumbalgia"
                   className="block text-gray-700 hover:text-pink-500 transition"
                 >
                   Lumbalgia
                 </Link>
-                <Link
-                  href="/dolor/cervicalgia"
-                  className="block text-gray-700 hover:text-pink-500 transition"
-                >
-                  Cervicalgia
-                </Link>
+
               </div>
             </div>
           </div>
