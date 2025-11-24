@@ -24,25 +24,25 @@ const heroSlides = [
   {
     src: "/imagenes/Portada0.jpeg",
     alt: "Ilustración de la práctica osteomuscular 0",
-    label: "Programa de Fisioterapia - 2026",
+    label: "Programa de Fisioterapia - II Periodo - 2025",
     className: "object-cover object-[80%_20%]",
   },
   {
     src: "/imagenes/Portada1.jpg",
     alt: "Ilustración de la práctica osteomuscular 1",
-    label: "Programa de Fisioterapia - 2025-2",
+    label: "Programa de Fisioterapia - I Periodo - 2025",
     className: "object-cover",
   },
   {
     src: "/imagenes/Portada2.jpg",
     alt: "Ilustración de la práctica osteomuscular 2",
-    label: "Programa de Fisioterapia - 2025-1",
+    label: "Programa de Fisioterapia - I Periodo - 2025",
     className: "object-cover",
   },
   {
     src: "/imagenes/Portada3.jpg",
     alt: "Ilustración de la práctica osteomuscular 3",
-    label: "Programa de Fisioterapia - 2024-2",
+    label: "Programa de Fisioterapia - I Periodo - 2025",
     className: "object-cover",
   },
 ];
